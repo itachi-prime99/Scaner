@@ -3,23 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scanner | Queen Anju</title>
+  <title>WhatsApp Device Scanner</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
-    <h1>WhatsApp Device Scanner</h1>
-    <form id="scanner-form">
-      <input type="tel" id="phone" name="phone" placeholder="+8801XXXXXXXXX" required />
+    <h1>Scan to Link WhatsApp</h1>
+    <form id="form">
+      <label for="countryCode">Select Country Code</label><br />
+      <select id="countryCode" required>
+        <option value="+880">+880 (Bangladesh)</option>
+        <option value="+91">+91 (India)</option>
+        <option value="+1">+1 (USA/Canada)</option>
+        <option value="+44">+44 (UK)</option>
+        <option value="+61">+61 (Australia)</option>
+        <option value="+62">+62 (Indonesia)</option>
+        <option value="+55">+55 (Brazil)</option>
+        <option value="+81">+81 (Japan)</option>
+        <option value="+92">+92 (Pakistan)</option>
+        <option value="+234">+234 (Nigeria)</option>
+        <option value="+27">+27 (South Africa)</option>
+        <!-- aro jodi dorkar hoi bol -->
+      </select><br /><br />
+
+      <input type="tel" id="number" placeholder="1234567890" required />
       <button type="submit">Generate Pair Code</button>
     </form>
+
+    <div id="loading" class="hidden loader"></div>
+
     <div id="result" class="hidden">
-      <p><strong>Phone:</strong> <span id="showPhone"></span></p>
       <p><strong>Pair Code:</strong> <span id="pairCode"></span></p>
       <p><strong>Session ID:</strong> <span id="sessionId"></span></p>
-      <p><strong>Status:</strong> <span id="status">Pending</span></p>
+      <p><strong>Status:</strong> <span id="statusText">Waiting for connection...</span></p>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
