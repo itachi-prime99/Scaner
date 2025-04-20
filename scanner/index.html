@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scanner</title>
+  <title>Scanner | Queen Anju</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="loader" id="loader"></div>
-  <div class="content" id="content">
-    <h1>Device Info</h1>
-    <p><strong>IP Address:</strong> <span id="ip"></span></p>
-    <p><strong>Location:</strong> <span id="location"></span></p>
-    <p><strong>Browser:</strong> <span id="browser"></span></p>
-    <p><strong>OS:</strong> <span id="os"></span></p>
-    <p><strong>Your Pair Code:</strong> <span id="code"></span></p>
-    <p style="font-size: 14px; color: #aaa;">Send this code to the bot to verify yourself.</p>
+  <div class="container">
+    <h1>Device Scanner</h1>
+    <form id="scanner-form">
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+      <button type="submit">Generate Pair Code</button>
+    </form>
+    <div id="result" class="hidden">
+      <p><strong>Phone:</strong> <span id="showPhone"></span></p>
+      <p><strong>Pair Code:</strong> <span id="pairCode"></span></p>
+      <p><strong>Session ID:</strong> <span id="sessionId"></span></p>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
