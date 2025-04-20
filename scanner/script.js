@@ -1,35 +1,22 @@
-function generateCode() {
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let code = "";
-  for (let i = 0; i < 3; i++) {
-    if (i > 0) code += "-";
-    for (let j = 0; j < 3; j++) {
-      code += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-  }
-  return code;
-}
+const form = document.getElementById("scanner-form");
+const resultDiv = document.getElementById("result");
 
-window.onload = function () {
-  const pairCode = generateCode();
-  document.getElementById("code").textContent = pairCode;
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const phone = document.getElementById("phone").value;
 
-  fetch("https://api.ipify.org?format=json")
-    .then((res) => res.json())
-    .then((data) => {
-      document.getElementById("ip").textContent = data.ip;
-      return fetch(`https://ipapi.co/${data.ip}/json/`);
-    })
-    .then((res) => res.json())
-    .then((loc) => {
-      document.getElementById("location").textContent = `${loc.city}, ${loc.region}, ${loc.country_name}`;
-      document.getElementById("browser").textContent = navigator.userAgent;
-      document.getElementById("os").textContent = navigator.platform;
+  if (!phone) return alert("Phone number is required");
 
-      document.getElementById("loader").style.display = "none";
-      document.getElementById("content").style.display = "block";
-    })
-    .catch((err) => {
-      console.error("Error:", err);
-    });
-};
+  const res = await fetch("/generate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ phone }),
+  });
+
+  const data = await res.json();
+
+  document.getElementById("showPhone").textContent = phone;
+  document.getElementById("pairCode").textContent = data.pairCode;
+  document.getElementById("sessionId").textContent = data.sessionId;
+  resultDiv.classList.remove("hidden");
+});
