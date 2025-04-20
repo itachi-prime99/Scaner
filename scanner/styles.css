@@ -1,35 +1,61 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-image: url('https://i.imgur.com/EuNXtMx.jpeg');
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://i.imgur.com/EuNXtMx.jpeg') no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .container {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 30px;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  max-width: 400px;
+  width: 100%;
   text-align: center;
 }
 
-input, button {
-  padding: 10px;
-  margin: 10px;
-  border: none;
-  border-radius: 6px;
+h1 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+input[type="tel"] {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
 button {
-  background-color: #1abc9c;
+  background-color: #4CAF50;
   color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#result {
+  margin-top: 1.5rem;
+  text-align: left;
 }
 
 .hidden {

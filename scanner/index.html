@@ -8,15 +8,16 @@
 </head>
 <body>
   <div class="container">
-    <h1>Device Scanner</h1>
+    <h1>WhatsApp Device Scanner</h1>
     <form id="scanner-form">
-      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+      <input type="tel" id="phone" name="phone" placeholder="+8801XXXXXXXXX" required />
       <button type="submit">Generate Pair Code</button>
     </form>
     <div id="result" class="hidden">
       <p><strong>Phone:</strong> <span id="showPhone"></span></p>
       <p><strong>Pair Code:</strong> <span id="pairCode"></span></p>
       <p><strong>Session ID:</strong> <span id="sessionId"></span></p>
+      <p><strong>Status:</strong> <span id="status">Pending</span></p>
     </div>
   </div>
   <script src="script.js"></script>
