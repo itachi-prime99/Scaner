@@ -1,16 +1,19 @@
 {
-  "name": "scanner-app",
+  "name": "wa-scanner",
   "version": "1.0.0",
-  "description": "WhatsApp device scanner & bot launcher",
+  "description": "WhatsApp Pair Code Scanner with Session ID",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "@hapi/boom": "^10.0.1",
-    "@whiskeysockets/baileys": "^6.7.2",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "uuid": "^9.0.0"
-  }
+    "@whiskeysockets/baileys": "^6.6.0",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["whatsapp", "scanner", "baileys", "session", "pair code"],
+  "author": "Eren",
+  "license": "MIT"
 }
