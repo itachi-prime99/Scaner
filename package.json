@@ -1,18 +1,11 @@
 {
   "name": "scanner-app",
   "version": "1.0.0",
-  "description": "IP & Device Info Scanner with Pair Code",
+  "description": "Scanner page with pair code and session linking",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": [
-    "scanner",
-    "ip",
-    "device-info",
-    "pair-code",
-    "whatsapp-bot"
-  ],
   "author": "itachi-prime99",
   "license": "MIT",
   "dependencies": {
